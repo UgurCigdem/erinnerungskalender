@@ -1,0 +1,94 @@
+
+
+/* Container */
+.erinnerung-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+
+/* Formular */
+.erinnerung-form{
+    width: 550px;
+    /* border: 1px solid #ddd; */
+    border: 1px solid #000;
+    background-color: #f9f9f9;
+}
+
+.erinnerung-form th, .erinnerung-form td {
+    padding: 5px;
+    text-align: left;
+}
+
+#erinnerung-tag, 
+#erinnerung-monat {
+    width: 25px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+#erinnerung-bezeichnung {
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#erinnerung-email{
+    width: 200px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+#erinnerung-auswahl {
+    width: 150px;
+    padding: 5px;
+    border: 1px solid #ccc;
+}
+
+
+#erinnerung-speichern, #erinnerung-neu-button {
+    border: none;
+    cursor: pointer;
+    font-weight: bold; 
+    padding: 5px 10px;
+    background-color: transparent;
+}
+
+#erinnerung-speichern:hover, #erinnerung-neu-button:hover {
+    background-color: gray; 
+}
+
+#erinnerung-neu-button {
+    color: red;
+    margin-right: 10px; /* Abstand zwischen den Buttons */
+}
+
+
+.erinnerung-bearbeiten, .erinnerung-loeschen {
+    border: none;
+    cursor: pointer;
+    color: black; 
+    text-decoration: none; 
+    background-color: #f9f9f9;
+}
+
+.erinnerung-bearbeiten:hover, .erinnerung-loeschen:hover {
+    text-decoration: underline; 
+}
+
+.erinnerung-liste{
+    width: 550px;
+    /* border: 1px solid #ddd; */
+    border: 1px solid #000;
+    background-color: #f9f9f9;
+
+    display: none;
+}
+
+.erinnerung-liste th, .erinnerung-liste td {
+    padding: 5px;
+    text-align: left;
+}
+

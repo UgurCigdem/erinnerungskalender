@@ -1,0 +1,6 @@
+# Ignoriere alle config.php-Dateien in allen Verzeichnissen
+config.php
+
+# Ignoriere alle Dateien, die mit *.config.php enden in allen Verzeichnissen
+*.config.php
+

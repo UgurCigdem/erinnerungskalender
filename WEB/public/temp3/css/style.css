@@ -1,0 +1,134 @@
+/* Allgemeiner Struktur der Seite */
+
+body {
+  font-family: "Open+Sans", Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  margin-bottom: 80px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.cell {
+  flex: 1;
+  /* padding: 10px; */
+  text-align: center;
+
+  min-width: 100px;
+}
+
+.header {
+  font-weight: bold;
+  /* background-color: lightgray; */
+  margin-bottom: 50px;
+
+  height: 150px;
+}
+
+.mitte {
+  width: 600px; /* feste Breite */
+  flex: none; /* Flex überschreiben */
+  position: relative; /* absolute Positionierung von Kind-Elementen */
+}
+
+#logo {
+  position: absolute;
+  width: 150px;
+  bottom: -20px;
+  right: -40px;
+}
+
+.rahmen {
+  border-bottom: 1px solid gray;
+}
+
+/* Inhalt im mittleren Bereich */
+
+#inhalt {
+  padding: 20px;
+  text-align: left;
+}
+
+/* Ecken im mittleren Bereich */
+
+.ecke {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  background-color: transparent; /* Kein Hintergrund */
+}
+
+.ecke-links {
+  left: 10px;
+  bottom: 10px;
+  border-left: 2px solid darkgray;
+  border-bottom: 2px solid darkgray;
+  border-bottom-left-radius: 5px;
+}
+
+.ecke-rechts {
+  right: 10px;
+  bottom: 10px;
+  border-right: 2px solid darkgray;
+  border-bottom: 2px solid darkgray;
+  border-bottom-right-radius: 5px;
+}
+
+/* Menüleiste */
+
+.menu {
+  width: 150px;
+  padding: 0;
+  float: right;
+  list-style-type: none; /* Punkte entfernen */
+}
+
+.menu li {
+  margin-bottom: 2px;
+}
+
+.menu li a {
+  display: block; /* Link auf gesamten Bereich */
+  padding: 5px;
+  text-decoration: none; /* keine Unterstreichung */
+
+  color: white;
+
+  border-left: 1px solid white;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+
+.menu li.aktiv a {
+  background-color: white;
+  color: black;
+}
+
+.streifen {
+  background-image: url("./../img/bg.png");
+  background-repeat: repeat-x; /* Bild horizontal wiederholen */
+  background-size: auto 300px; /* Höhe auf 300px festlegen */
+  background-position: top; /* das Bild oben im div positionieren */
+}
+
+/*
+        .fusszeile {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }*/

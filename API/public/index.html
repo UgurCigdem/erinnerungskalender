@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Dokumentation – Benutzer und Erinnerungskalender</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            color: #2c3e50;
+        }
+
+        h2 {
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        code {
+            display: block;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+
+        .endpoint {
+            background-color: #ecf0f1;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 5px solid #3498db;
+        }
+
+        .request-body, .response {
+            background-color: #e8f0fe;
+            padding: 10px;
+            border-left: 5px solid #3498db;
+            margin: 10px 0;
+        }
+
+        .method {
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .url {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>API Dokumentation – Benutzer und Erinnerungskalender</h1>
+    <p>Diese Dokumentation beschreibt die API-Schnittstellen für die Benutzerverwaltung und den Erinnerungskalender. Benutzer können registriert, authentifiziert und ihre Erinnerungen verwaltet werden. Die Authentifizierung erfolgt über JWT (JSON Web Token).</p>
+
+    <h2>1. Benutzer Registrierung</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> POST</p>
+        <p class="url">URL: /api/register.php</p>
+        <p>Beschreibung: Erlaubt es, einen neuen Benutzer zu registrieren.</p>
+        <div class="request-body">
+            <strong>Request-Body:</strong>
+            <code>
+{
+  "Name": "Max Mustermann",
+  "Email": "max@example.com",
+  "Passwort": "geheimespasswort"
+}
+            </code>
+        </div>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Registrierung erfolgreich!",
+  "id": 1
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>2. Benutzer Login</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> POST</p>
+        <p class="url">URL: /api/login.php</p>
+        <p>Beschreibung: Erlaubt es, sich als Benutzer anzumelden und ein JWT-Token zu erhalten.</p>
+        <div class="request-body">
+            <strong>Request-Body:</strong>
+            <code>
+{
+  "Email": "max@muster.at",
+  "Passwort": "geheimespasswort"
+}
+            </code>
+        </div>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Login erfolgreich!",
+  "id": 1,
+  "name": "Max Mustermann",
+  "email": "max@muster.at",
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>3. Benutzer abrufen</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> GET</p>
+        <p class="url">URL: /api/benutzer.php?id={id}</p>
+        <p>Beschreibung: Ruft einen Benutzer basierend auf der ID ab.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "id": 1,
+  "Name": "Max Mustermann",
+  "Email": "max@muster.at"
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>4. Benutzer aktualisieren</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> PUT</p>
+        <p class="url">URL: /api/benutzer.php?id={id}</p>
+        <p>Beschreibung: Aktualisiert die Informationen eines Benutzers.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="request-body">
+            <strong>Request-Body:</strong>
+            <code>
+{
+  "Name": "Max Neuer",
+  "Email": "max.mustermann@muster.at",
+  "Passwort": "neuespasswort"
+}
+            </code>
+        </div>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Benutzer aktualisiert"
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>5. Benutzer löschen</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> DELETE</p>
+        <p class="url">URL: /api/benutzer.php?id={id}</p>
+        <p>Beschreibung: Löscht einen Benutzer.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Benutzer gelöscht"
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>6. Erinnerungen anzeigen</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> GET</p>
+        <p class="url">URL: /api/erinnerung.php?BenutzerId={BenutzerId}</p>
+        <p>Beschreibung: Liefert alle Erinnerungen eines Benutzers.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+[
+  {
+    "id": 1,
+    "Termin": "2024-09-27",
+    "Bezeichnung": "Arzttermin"
+  },
+  {
+    "id": 2,
+    "Termin": "2024-09-28",
+    "Bezeichnung": "Meeting"
+  }
+]
+            </code>
+        </div>
+    </div>
+
+    <h2>7. Erinnerung erstellen</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> POST</p>
+        <p class="url">URL: /api/erinnerung.php</p>
+        <p>Beschreibung: Erstellt eine neue Erinnerung für den Benutzer.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="request-body">
+            <strong>Request-Body:</strong>
+            <code>
+{
+  "BenutzerId": 1,
+  "Termin": "2024-10-10",
+  "Bezeichnung": "Geburtstagserinnerung",
+  "InTage": 7
+}
+            </code>
+        </div>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Erinnerung erstellt",
+  "id": 1
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>8. Erinnerung bearbeiten</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> PUT</p>
+        <p class="url">URL: /api/erinnerung.php?id={id}</p>
+        <p>Beschreibung: Aktualisiert eine bestehende Erinnerung.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="request-body">
+            <strong>Request-Body:</strong>
+            <code>
+{
+  "Termin": "2024-10-12",
+  "Bezeichnung": "Geänderter Termin",
+  "InTage": 5
+}
+            </code>
+        </div>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Erinnerung aktualisiert"
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>9. Erinnerung löschen</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> DELETE</p>
+        <p class="url">URL: /api/erinnerung.php?id={id}</p>
+        <p>Beschreibung: Löscht eine Erinnerung.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Erinnerung gelöscht"
+}
+            </code>
+        </div>
+    </div>
+
+    <h2>10. Erinnerungen für ein bestimmtes Datum anzeigen (Admin)</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> GET</p>
+        <p class="url">URL: /api/erinnerung2.php?date={date}</p>
+        <p>Beschreibung: Liefert alle Erinnerungen für ein bestimmtes Datum. Nur Administratoren können diesen Endpunkt verwenden.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+[
+  {
+    "ErinnerungId": 2,
+    "BenutzerId": 1,
+    "Von": "2024-11-01",
+    "Bis": "2024-11-15",
+    "Bezeichnung": "Arzttermin",
+    "Name": "Test User",
+    "Email": "testuser@example.com"
+  },
+  {
+    "ErinnerungId": 9,
+    "BenutzerId": 1,
+    "Von": "2024-11-05",
+    "Bis": "2024-11-07",
+    "Bezeichnung": "Elternabend in der Schule",
+    "Name": "Test User",
+    "Email": "testuser@example.com"
+  }
+]
+            </code>
+        </div>
+    </div>
+
+    <h2>11. Alle Erinnerungen anzeigen (Admin)</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> GET</p>
+        <p class="url">URL: /api/erinnerung2.php</p>
+        <p>Beschreibung: Liefert alle gespeicherten Erinnerungen. Nur Administratoren können diesen Endpunkt verwenden.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+[
+  {
+    "ErinnerungId": 2,
+    "BenutzerId": 1,
+    "Von": "2024-11-01",
+    "Bis": "2024-11-15",
+    "Bezeichnung": "Arzttermin",
+    "Name": "Test User",
+    "Email": "testuser@example.com"
+  },
+  {
+    "ErinnerungId": 9,
+    "BenutzerId": 1,
+    "Von": "2024-11-05",
+    "Bis": "2024-11-07",
+    "Bezeichnung": "Elternabend in der Schule",
+    "Name": "Test User",
+    "Email": "testuser@example.com"
+  }
+]
+            </code>
+        </div>
+    </div>
+
+    <h2>12. Erinnerung aktualisieren (Admin)</h2>
+    <div class="endpoint">
+        <p><span class="method">Methode:</span> PUT</p>
+        <p class="url">URL: /api/erinnerung2.php</p>
+        <p>Beschreibung: Aktualisiert eine bestehende Erinnerung basierend auf der ID. Nur Administratoren können diesen Endpunkt verwenden.</p>
+        <p>Anfrage-Header:</p>
+        <code>Authorization: Bearer &lt;JWT-Token&gt;</code>
+        <div class="request-body">
+            <strong>Request-Body:</strong>
+            <code>
+{
+  "ErinnerungId": 1
+}
+            </code>
+        </div>
+        <div class="response">
+            <strong>Antwort (bei Erfolg):</strong>
+            <code>
+{
+  "message": "Erinnerung aktualisiert"
+}
+            </code>
+        </div>
+    </div>
+
+    <p><strong>Hinweis:</strong> Alle Endpunkte erfordern, dass der Benutzer als Administrator eingeloggt ist. Anfragen ohne die nötige Rolle werden mit dem HTTP-Status 403 (Forbidden) abgelehnt.</p>
+</div>
+
+</body>
+</html>

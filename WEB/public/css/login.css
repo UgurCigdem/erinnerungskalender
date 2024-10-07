@@ -1,0 +1,51 @@
+
+
+/* Allgemeine Einstellungen für das Login-Formular */
+    
+    /* Container */
+    .login-container {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0px;
+    }
+
+    /* Formular */
+    .login-form {
+        width: 550px;
+        border: 1px solid #ddd;
+        background-color: #f9f9f9;
+    }
+
+    .login-form th, .login-form td {
+        padding: 5px;
+        text-align: left;
+    }
+
+    .login-formular-feld{
+        width: 200px;
+        padding: 5px;
+        border: 1px solid #ccc;
+    }
+
+    #login-submit {
+        border: none;
+        cursor: pointer;
+        float: right;
+        font-weight: bold; 
+        padding: 5px 10px;
+        background-color: transparent;
+    }
+
+    #login-submit:hover {
+        background-color: gray; 
+    }
+
+    #loginForm{
+        margin-top:10px;
+    }
+
+    #loginResponse{
+        margin-bottom:10px;
+    }
+
+    

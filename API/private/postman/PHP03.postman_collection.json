@@ -1,0 +1,533 @@
+{
+	"info": {
+		"_postman_id": "ce515188-eafe-42e6-89ab-f6051fbcd02d",
+		"name": "PHP03",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20022456"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5001/api/register.php",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Name\": \"Test User\",\r\n    \"Email\": \"testuser@example.com\",\r\n    \"Passwort\": \"meinPasswort\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/register.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"register.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/login.php",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Email\": \"testuser@example.com\",\r\n    \"Passwort\": \"meinPasswort\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/login.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"login.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung.php",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung.php",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"BenutzerId\": 3,\r\n  \"Termin\": \"2024-10-10\",\r\n  \"Bezeichnung\": \"Geburtstag3\",\r\n  \"InTage\": 10\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung.php?id=1",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"BenutzerId\": 1,\r\n  \"Tag\": 21,\r\n  \"Monat\": 9,\r\n  \"Bezeichnung\": \"Geburtstag\",\r\n  \"InTage\": 20\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung.php?id=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung.php?id=2",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung.php?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/benutzer.php",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/benutzer.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"benutzer.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/benutzer.php?email=ugurcigdem@gmail.com",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Authorization",
+							"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/benutzer.php?email=ugurcigdem@gmail.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"benutzer.php"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "ugurcigdem@gmail.com"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/benutzer.php",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\": \"Test User\",\r\n  \"Email\": \"testuser@example.com\",\r\n  \"Passwort\": \"meinPasswort\",\r\n  \"Rolle\": \"user\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/benutzer.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"benutzer.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/benutzer.php?id=2",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Name\": \"Ugur Cigdem\",\r\n  \"Email\": \"ugurcigdem@gmail.com\",\r\n  \"Passwort\": \"abc\",\r\n  \"Rolle\": \"admin\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/benutzer.php?id=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"benutzer.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/benutzer.php?id=3",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/benutzer.php?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"benutzer.php"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung.php?BenutzerId=2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung.php?BenutzerId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung.php"
+					],
+					"query": [
+						{
+							"key": "BenutzerId",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/erinnerung-gast.php",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzM5NjIwMCwibmJmIjoxNzI3Mzk2MjAwLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIn19.R3cbsHNNqSaXUKDJYoWHDePc58uiNnODKA4F1fbSiG0",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Email\": \"office14@ugur.at\",\r\n  \"Termin\": \"2024-10-01\",\r\n  \"Bezeichnung\": \"Geburtstag2\",\r\n  \"InTage\": 3\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/erinnerung-gast.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"erinnerung-gast.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung2.php?date=2024-11-01",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzg2MjE4MSwibmJmIjoxNzI3ODYyMTgxLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwicm9sbGUiOiJhZG1pbiJ9fQ.uAP0ZQtc3El_166_iH7p52EVNLugUGvswvqjQR_wiSY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung2.php?date=2024-11-01",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung2.php"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "2024-11-01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5001/api/erinnerung2.php",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0IiwiYXVkIjoiaHR0cDovL2xvY2FsaG9zdCIsImlhdCI6MTcyNzg2MjE4MSwibmJmIjoxNzI3ODYyMTgxLCJkYXRhIjp7ImlkIjoxLCJlbWFpbCI6InRlc3R1c2VyQGV4YW1wbGUuY29tIiwicm9sbGUiOiJhZG1pbiJ9fQ.uAP0ZQtc3El_166_iH7p52EVNLugUGvswvqjQR_wiSY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ErinnerungId\": 1\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:5001/api/erinnerung2.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"erinnerung2.php"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
